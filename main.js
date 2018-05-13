@@ -36,11 +36,13 @@ app.on('ready', function () {
 
     const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
     Menu.setApplicationMenu(mainMenu);
+
+    mainWindow.on('close', function(event){
+        app.quit();
+    });
 });
 
-mainWindow.on('close', function(event){
-    app.quit();
-});
+
 
 ipcMain.on('items', function (e, item) {
     //image.write(app.getPath('desktop') + '/test2.png');
