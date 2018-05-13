@@ -1,0 +1,21 @@
+{
+  "name": "ConradFonter",
+  "version": "1.0.0",
+  "description": "This utility turns plaintext into the Conrad font.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Vasista Vovveti",
+  "license": "MIT",
+  "dependencies": {
+    "electron-debug": "^1.5.0",
+    "electron-is-dev": "^0.3.0",
+    "jimp": "^0.2.28",
+    "merge-img": "^2.1.2"
+  },
+  "devDependencies": {
+    "electron": "^2.0.0",
+    "electron-packager": "^12.0.2"
+  }
+}
