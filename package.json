@@ -4,10 +4,40 @@
   "description": "This utility turns plaintext into the Conrad font.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+     "dist": "build",
+     "dist:win": "build --win dir",
+     "dist:linux":"build --linux dir"
   },
   "author": "Vasista Vovveti",
   "license": "MIT",
+  "build": {
+    "appId": "com.vvv.ConradFonter",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  },
   "dependencies": {
     "electron-debug": "^1.5.0",
     "electron-is-dev": "^0.3.0",
@@ -16,6 +46,7 @@
   },
   "devDependencies": {
     "electron": "^2.0.0",
+    "electron-builder": "^20.13.3",
     "electron-packager": "^12.0.2"
   }
 }
